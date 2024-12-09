@@ -1,0 +1,74 @@
+# go-mage
+
+`go-mage`, Go projelerini derlemek ve yönetmek için `Makefile` yerine `magefile` kullanan bir projedir. `magefile`, Go dilinde yazılmış bir build aracıdır ve `Makefile`'a benzer şekilde çalışır, ancak Go'nun gücünü ve esnekliğini kullanır.
+
+## Projenin Amacı
+
+**go-mage** projesinin amacı, Go projelerini derlemek ve test etmek ve diğer build işlemlerini kolaylaştırmak için cross platform destekli örnek bir **magefile** sunmaktır.. `magefile`, Go dilinde yazıldığı için, Go geliştiricileri için daha tanıdık ve esnek bir yapı sunar.
+
+## Projenin Özellikleri
+
+- **Cross Platform Destek**: Proje Windows, MacOS ve Linux işletim sistemlerinde derlenebilir.
+
+- **Windows Özel Özellikleri**: 
+  - MinGW kullanarak Windows için derleme yapabilir
+  - Syso ve version info dosyaları otomatik olarak üretilir
+
+- **MacOS Özel Özellikleri**:
+  - MacOS 10.15 ve 11.0 SDK desteği ile derleme yapabilir
+
+- **Güvenlik ve Kod Kalitesi**:
+  - Vulnerability check ile güvenlik taraması yapar
+  - Golangci-lint ile kod kalitesi kontrolü sağlar
+  - Gocov ile test coverage raporlaması yapar
+
+## Ön Hazırlık
+
+Projenin çalışabilmesi için sistemde `mage` uygulamasının kurulu olması gerekmektedir. `mage`'i kurmak için aşağıdaki adımları izleyebilirsiniz:
+```sh
+go install github.com/magefile/mage@latest
+```
+
+Kurulumdan sonra, mage komutunu kullanarak magefile'ı çalıştırabilirsiniz. Örneğin:
+```sh
+mage build
+```
+
+Alternatif olarak mage uygulamasını kurmadan magefile'ı doğrudan Go ile çalıştırabilirsiniz:
+```sh
+go run mage.go build
+```
+
+## Kurulum
+
+Projeyi klonladıktan sonra gerekli bağımlılıkları yüklemek için aşağıdaki adımları izleyin:
+
+```sh
+git clone https://github.com/yakuter/go-mage.git
+cd go-mage
+go mod tidy
+```
+
+## Kullanım
+Projede hangi mage komutları olduğunu görmek için `mage` komutunu çalıştırmanız yeterli.
+```sh
+➜ mage
+Targets:
+  build        builds the binary.
+  clean        cleans the build directory.
+  generate     runs go generate.
+  linter       runs the linter.
+  test         runs the tests.
+  vulncheck    runs the vulnerability check.
+```
+
+Ardından istediğiniz bir komutu seçip direkt çalıştırabilirsiniz. Örneğin projedeki güvenlik zafiyetlerini Go'nun kendi aracıyla yakalamak için şu komutu çalıştırabilirsiniz:
+```sh
+mage vulncheck
+```sh
+
+## Katkıda Bulunma
+Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue açın.
+
+## Lisans
+Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakabilirsiniz.
