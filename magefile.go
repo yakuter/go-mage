@@ -344,7 +344,7 @@ func (b *Builder) targetFilename() string {
 	if b.goos == "windows" {
 		extension = ".exe"
 	}
-	// tactical_windows_amd64.exe
+	// go-mage_windows_amd64.exe
 	return fmt.Sprintf("%s_%s_%s%s", name, b.goos, b.arch, extension)
 }
 
@@ -353,7 +353,7 @@ func (b *Builder) ensureSyso() error {
 		return nil
 	}
 
-	sysoPath := "cmd/tactical/resource_" + b.arch + ".syso"
+	sysoPath := "cmd/" + name + "/resource_" + b.arch + ".syso"
 	if err := sh.Rm(sysoPath); err != nil && !os.IsNotExist(err) {
 		return fmt.Errorf("failed to remove existing syso: %v", err)
 	}

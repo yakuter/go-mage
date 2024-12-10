@@ -28,5 +28,5 @@
         }
     },
     "IconPath": "./app.ico",
-    "ManifestPath": "./admin.manifest"
+    "ManifestPath": "./app.manifest"
 }
