@@ -414,21 +414,14 @@ func (b *Builder) env() map[string]string {
 
 	env["GOOS"] = b.goos
 	env["GOARCH"] = b.arch
-	env["CGO_ENABLED"] = cgo()
+	env["CGO_ENABLED"] = os.Getenv("CGO_ENABLED")
 	env["BUILD_ENV"] = buildEnv()
 
 	if b.goos == "darwin" {
 		env["CGO_CFLAGS"] = "-mmacosx-version-min=10.15"
 		env["CGO_LDFLAGS"] = "-mmacosx-version-min=10.15"
-
-		// Set SDKROOT based on GOARCH
-		sdkroot1100 := "/Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk"
-		sdkroot1015 := "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk"
-		if b.arch == "arm64" {
-			env["SDKROOT"] = sdkroot1100
-		} else {
-			env["SDKROOT"] = sdkroot1015
-		}
+		// MACOS_SDK_VERSION can be 10.15, 11.0, 14.5, 15.0 etc.
+		env["SDKROOT"] = macosSDK(os.Getenv("MACOS_SDK_VERSION"))
 	}
 
 	if b.goos == "windows" {
@@ -533,11 +526,14 @@ func buildEnv() string {
 	}
 }
 
-func cgo() string {
-	if os.Getenv("ENABLE_CGO") == "1" {
-		return "1"
+func macosSDK(env string) string {
+	sdkPath := fmt.Sprintf("/Library/Developer/CommandLineTools/SDKs/MacOSX%s.sdk", env)
+	_, err := os.Stat(sdkPath)
+	if os.IsNotExist(err) {
+		fmt.Printf("SDK path %s does not exist\n", sdkPath)
+		return ""
 	}
-	return "0"
+	return sdkPath
 }
 
 func goos() string {
