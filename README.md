@@ -22,6 +22,7 @@
   - Vulnerability check ile güvenlik taraması yapar
   - Golangci-lint ile kod kalitesi kontrolü sağlar
   - Gocov ile test coverage raporlaması yapar
+  - Magefile'da belirtilen versiyon ve diğer bilgiler kullanılarak projedeki Version, BuildTime, CommitID ve BuildMode değişkenleri build esnasında güncellenir.
 
 ## Ön Hazırlık
 
