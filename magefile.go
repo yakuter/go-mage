@@ -463,10 +463,8 @@ func Test() error {
 	return Builder{goos: goos(), arch: goarch()}.Test()
 }
 
-// Build builds the binary.
-func Build() error {
-	return Builder{goos: goos(), arch: goarch()}.Build()
-}
+// Build builds the binary for the current platform.
+func Build() error { return Builder{goos: goos(), arch: goarch()}.Build() }
 
 // BuildDarwinArm64 builds the binary for darwin arm64.
 func BuildDarwinArm64() error { return Builder{goos: "darwin", arch: "arm64"}.Build() }
