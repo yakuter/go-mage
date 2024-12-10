@@ -23,6 +23,7 @@
   - Golangci-lint ile kod kalitesi kontrolü sağlar
   - Gocov ile test coverage raporlaması yapar
   - Magefile'da belirtilen versiyon ve diğer bilgiler kullanılarak projedeki Version, BuildTime, CommitID ve BuildMode değişkenleri build esnasında güncellenir.
+  - Projede goversioninfo, golangci-lint, gocov ve govulncheck araçları kullanılır. Eğer sistemde bu araçlar kurulu değilse otomatik olarak kurar.
 
 ## Ön Hazırlık
 
