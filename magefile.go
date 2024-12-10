@@ -36,7 +36,6 @@ var (
 	cleanupFiles = []string{
 		"*cover.out",
 		"*.log",
-		"./cmd/go-mage/versioninfo.json",
 		"./cmd/go-mage/*.syso",
 		"./build/go-mage_*",
 	}
@@ -468,6 +467,24 @@ func Test() error {
 func Build() error {
 	return Builder{goos: goos(), arch: goarch()}.Build()
 }
+
+// BuildDarwinArm64 builds the binary for darwin arm64.
+func BuildDarwinArm64() error { return Builder{goos: "darwin", arch: "arm64"}.Build() }
+
+// BuildDarwinAmd64 builds the binary for darwin amd64.
+func BuildDarwinAmd64() error { return Builder{goos: "darwin", arch: "amd64"}.Build() }
+
+// BuildLinuxAmd64 builds the binary for linux amd64.
+func BuildLinuxAmd64() error { return Builder{goos: "linux", arch: "amd64"}.Build() }
+
+// BuildLinuxArm64 builds the binary for linux arm64.
+func BuildLinuxArm64() error { return Builder{goos: "linux", arch: "arm64"}.Build() }
+
+// BuildWindowsAmd64 builds the binary for windows amd64.
+func BuildWindowsAmd64() error { return Builder{goos: "windows", arch: "amd64"}.Build() }
+
+// BuildWindows386 builds the binary for windows 386.
+func BuildWindows386() error { return Builder{goos: "windows", arch: "386"}.Build() }
 
 // Clean cleans the build directory.
 func Clean() error {
