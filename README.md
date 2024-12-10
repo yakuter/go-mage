@@ -72,7 +72,7 @@ Targets:
 Ardından istediğiniz bir komutu seçip direkt çalıştırabilirsiniz. Örneğin projedeki güvenlik zafiyetlerini Go'nun kendi aracıyla yakalamak için şu komutu çalıştırabilirsiniz:
 ```sh
 mage vulncheck
-```sh
+```
 
 ## Katkıda Bulunma
 Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue açın.
