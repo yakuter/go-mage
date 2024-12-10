@@ -6,16 +6,17 @@
 
 **go-mage** projesinin amacı, Go projelerini derlemek ve test etmek ve diğer build işlemlerini kolaylaştırmak için cross platform destekli örnek bir **magefile** sunmaktır.. `magefile`, Go dilinde yazıldığı için, Go geliştiricileri için daha tanıdık ve esnek bir yapı sunar.
 
-## Projenin Özellikleri
+## Projenin Özellikleri ve Uyarılar
 
-- **Cross Platform Destek**: Proje Windows, MacOS ve Linux işletim sistemlerinde derlenebilir.
+- **Cross Platform Destek**: Proje **Windows**, **MacOS** ve **Linux** işletim sistemlerinde derlenebilir.
 
 - **Windows Özel Özellikleri**: 
   - MinGW kullanarak Windows için derleme yapabilir
   - Syso ve version info dosyaları otomatik olarak üretilir
+  - Windows'ta build almadan önce build/windows/assets klasörüne manifest (app.manifest) ve icon (app.icon) dosyalarını koymayı unutmayınız.
 
 - **MacOS Özel Özellikleri**:
-  - MacOS 10.15 ve 11.0 SDK desteği ile derleme yapabilir
+  - MacOS'ta istenilen SDK ile build alınabilir. Mage'i çalıştırmadan önce `export MACOS_SDK_VERSION=14.5` gibi env set etmeniz yeterli.
 
 - **Güvenlik ve Kod Kalitesi**:
   - Vulnerability check ile güvenlik taraması yapar
