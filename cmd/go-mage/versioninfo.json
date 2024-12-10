@@ -26,7 +26,5 @@
             "LangID": "0409",
             "CharsetID": "04B0"
         }
-    },
-    "IconPath": "./app.ico",
-    "ManifestPath": "./app.manifest"
+    }
 }
