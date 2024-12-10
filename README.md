@@ -40,7 +40,7 @@ Alternatif olarak mage uygulamasını kurmadan magefile'ı doğrudan Go ile çal
 go run mage.go build
 ```
 
-Son bir kullanım şekli olarak mage'i build alabilir ve sunucuda öyle çalıştırabilirsiniz. Böylece sunucuda bağımlılıklardan kurtulmuş olursunuz.
+Son bir kullanım şekli olarak mage'i önceden build alabilir ve sunucuda öyle çalıştırabilirsiniz. Böylece sunucudaki bağımlılıklardan kurtulmuş olursunuz.
 ```sh
 mage --compile ./runmage
 ./runmage
