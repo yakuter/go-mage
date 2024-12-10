@@ -1,0 +1,32 @@
+{
+    "FixedFileInfo": {
+        "FileVersion": {
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0
+        }
+    },
+    "StringFileInfo": {
+        "Comments": "",
+        "CompanyName": "",
+        "FileDescription": "go-mage is a simple build tool for Go",
+        "FileVersion": "",
+        "InternalName": "",
+        "LegalCopyright": "Erhan Yakut 2024",
+        "LegalTrademarks": "",
+        "OriginalFilename": "go-mage.exe",
+        "PrivateBuild": "",
+        "ProductName": "go-mage",
+        "ProductVersion": "1.0.0.0",
+        "SpecialBuild": ""
+    },
+    "VarFileInfo": {
+        "Translation": {
+            "LangID": "0409",
+            "CharsetID": "04B0"
+        }
+    },
+    "IconPath": "./app.ico",
+    "ManifestPath": "./admin.manifest"
+}
