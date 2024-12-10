@@ -31,7 +31,7 @@ var (
 	assets             = map[string]string{
 		"manifest":    "build/windows/assets/app.manifest",
 		"icon'":       "build/windows/assets/app.ico",
-		"versioninfo": "cmd/tactical/versioninfo.json",
+		"versioninfo": "cmd/go-mage/versioninfo.json",
 	}
 	cleanupFiles = []string{
 		"*cover.out",
